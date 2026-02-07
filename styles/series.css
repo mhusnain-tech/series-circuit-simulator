@@ -7,60 +7,82 @@ body {
     padding: 20px;
 }
 
-.description-text {
-    max-width: 600px;
-    text-align: justify;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    border-radius: 8px;
-}
-
-.simulator-section {
-    position: relative;
-    width: 400px; /* Image ki width ke barabar */
-    margin: 40px 0;
+/* Heading aur Text ki styling */
+h1, h3 {
+    color: #161617;
     text-align: center;
 }
 
-.simulator-section img {
-    width: 100%;
+p {
+    max-width: 500px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+/* Container jo image aur inputs ko hold karta hai */
+.container, h3 + img + div, h3 + img {
+    position: relative;
+    width: 400px; /* Diagram ki width */
+    margin: 10px auto;
+}
+
+/* Diagram image ki styling */
+img {
+    width: 400px;
     height: auto;
+    display: block;
 }
 
-/* Inputs ko image ke upar sahi jagah set karne ke liye */
-.input-overlay {
+/* Inputs ki common styling */
+input {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.input-overlay input {
-    position: absolute;
-    width: 40px;
-    padding: 5px;
+    width: 50px;
+    padding: 3px;
     text-align: center;
     border: 1px solid #333;
     border-radius: 4px;
+    font-size: 12px;
 }
 
-/* Specific positions for Resistance inputs */
-#r1 { top: 25%; left: 35%; }
-#r3 { top: 25%; left: 55%; }
-#r4 { top: 25%; left: 75%; }
-#R  { top: 10%; left: 15%; background: #ffffcc; font-weight: bold; }
+/* --- Resistance Section Positions --- */
+/* Rt (Total) ka box */
+.r1 #R, .r1 #r { 
+    top: -160px; /* Image ke upar Rt ki position */
+    left: 45px; 
+    background: #ffffcc; 
+    font-weight: bold; 
+}
 
-.button-container {
-    margin-top: 10px;
+/* R1, R2, R3 ki positions (Diagram ke resistors ke upar) */
+.r2 #r1, .r2 #r5 { top: -115px; left: 140px; }
+.r3 #r3, .r3 #r6 { top: -115px; left: 220px; }
+.r4 #r4, .r4 #r7 { top: -115px; left: 300px; }
+
+/* Voltage input box (V) */
+.r5 #v { top: -35px; left: 180px; }
+
+/* --- Voltage Drop Section Positions --- */
+.R1 #v1 { margin-top: -125px; margin-left: 140px; }
+.R2 #v2 { margin-top: -125px; margin-left: 220px; }
+.R3 #v3 { margin-top: -125px; margin-left: 300px; }
+.R4 #V  { margin-top: -45px;  margin-left: 180px; }
+
+/* Buttons styling */
+.button {
+    margin: 15px 0;
+    text-align: center;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 8px 20px;
     cursor: pointer;
-    margin: 5px;
-    border-radius: 5px;
-    border: none;
     background: #333;
     color: white;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #555;
 }
