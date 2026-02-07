@@ -8,103 +8,114 @@
 </head>
 <body>
     
-    <h1 style="color: rgb(22, 22, 23);">What is a Series Circuit?</h1>
-    <p style="font-size: 14px; font-family: 'Times New Roman', Times, serif; width: 500px; text-align: justify;">
+    <h1>What is a Series Circuit?</h1>
+    <p class="description-text">
         A series circuit is a simple circuit that allows electrons to pass between one or more resistors. 
         Anything that draws power from a cell is referred to as a resistor (like a bulb). In a series circuit, 
-        components are connected end-to-end in a single path, with no branches. Any gap or disconnection 
-        will cause the entire circuit to fail.
+        components are connected end-to-end in a single path, with no branches.
     </p>
 
-    <div class="container">
-        <img id="myimg" src="images/off_bulb.png" alt="Bulb Status">
-        <div class="button">
+    <div class="container" style="text-align: center;">
+        <img id="myimg" src="images/off_bulb.png" alt="Bulb Status" style="width:150px;">
+        <div class="button-container">
             <button onclick="off()">OFF</button>
             <button onclick="on()">ON</button>
         </div>
-        <br><br>
-
-        <h3>Total Resistance</h3>
-        <img src="images/series.png" alt="Series Diagram">
-        <div class="r1"><input type="text" placeholder="Total Rt" id="R" onclick="calculate()"></div>
-        <div class="r2"><input type="text" placeholder="R1" id="r1"></div>
-        <div class="r3"><input type="text" placeholder="R2" id="r3"></div>
-        <div class="r4"><input type="text" placeholder="R3" id="r4"></div>
     </div>
 
-    <h3>Total Current</h3>
-    <img src="images/series.png" alt="Series Diagram">
-    <div class="r1"><input type="text" placeholder="Total It" id="r" onclick="current()"></div>
-    <div class="r2"><input type="text" placeholder="R1" id="r5"></div>
-    <div class="r3"><input type="text" placeholder="R2" id="r6"></div>
-    <div class="r4"><input type="text" placeholder="R3" id="r7"></div>
-    <div class="r5"><input type="text" placeholder="Voltage (V)" id="v"></div>
-    <br>
+    <hr style="width: 80%; margin: 20px 0;">
 
-    <h3>Voltage Across Each Resistance</h3>
-    <img src="images/voltage.png" alt="Voltage Diagram">
-    <div class="R1"><input type="text" placeholder="V1" id="v1" onclick="voltage()"></div>
-    <div class="R2"><input type="text" placeholder="V2" id="v2" onclick="voltage1()"></div>
-    <div class="R3"><input type="text" placeholder="V3" id ="v3" onclick="voltage2()"></div>
-    <div class="R4"><input type="text" placeholder="Total Voltage" id="V"></div>
-    <br>
+    <div class="simulator-section">
+        <h3>1. Calculate Total Resistance (Rt)</h3>
+        <p>Formula: $R_t = R_1 + R_2 + R_3$</p>
+        <img src="images/series.png" alt="Series Diagram">
+        <div class="input-overlay">
+            <input type="number" placeholder="R1" id="r1">
+            <input type="number" placeholder="R2" id="r3">
+            <input type="number" placeholder="R3" id="r4">
+            <input type="text" placeholder="Total Rt" id="R" onclick="calculate()" readonly style="background:#e0f7fa;">
+        </div>
+    </div>
+
+    <div class="simulator-section">
+        <h3>2. Calculate Total Current (It)</h3>
+        <p>Formula: $I = V / R_t$</p>
+        <img src="images/series.png" alt="Series Diagram">
+        <div class="input-overlay">
+            <input type="number" placeholder="R1" id="r5">
+            <input type="number" placeholder="R2" id="r6">
+            <input type="number" placeholder="R3" id="r7">
+            <input type="number" placeholder="Volts" id="v" style="top: 80%; left: 45%;">
+            <input type="text" placeholder="Total It" id="r" onclick="current()" readonly style="background:#e0f7fa;">
+        </div>
+    </div>
+
+    <div class="simulator-section">
+        <h3>3. Voltage Across Each Resistor</h3>
+        <p>Formula: $V_n = I \times R_n$</p>
+        <img src="images/voltage.png" alt="Voltage Diagram">
+        <div class="input-overlay">
+            <input type="text" placeholder="V1" id="v1" onclick="calcVoltageDrop()" readonly>
+            <input type="text" placeholder="V2" id="v2" readonly>
+            <input type="text" placeholder="V3" id="v3" readonly>
+            <input type="number" placeholder="Total V" id="V_input">
+        </div>
+    </div>
 
 <script>
-    function off(){
-        document.getElementById('myimg').src='images/off_bulb.png';
+    function off() {
+        document.getElementById('myimg').src = 'images/off_bulb.png';
     }
     
-    function on(){
-        document.getElementById('myimg').src='images/on_bulb.png';
+    function on() {
+        document.getElementById('myimg').src = 'images/on_bulb.png';
     }
 
-    // Calculate Total Resistance
-    function calculate(){
-        var numa = parseFloat(document.getElementById("r1").value) || 0;
-        var numb = parseFloat(document.getElementById("r3").value) || 0;
-        var numc = parseFloat(document.getElementById("r4").value) || 0;
-        var tot = numa + numb + numc;
-        document.getElementById("R").value = tot.toFixed(2);
+    // 1. Calculate Total Resistance
+    function calculate() {
+        var r1 = parseFloat(document.getElementById("r1").value) || 0;
+        var r2 = parseFloat(document.getElementById("r3").value) || 0;
+        var r3 = parseFloat(document.getElementById("r4").value) || 0;
+        var total = r1 + r2 + r3;
+        document.getElementById("R").value = total.toFixed(2) + " Ω";
     }
 
-    // Calculate Total Current (I = V/R)
-    function current(){    
-        var numA = parseFloat(document.getElementById("r5").value) || 0;
-        var numB = parseFloat(document.getElementById("r6").value) || 0;
-        var numC = parseFloat(document.getElementById("r7").value) || 0;
-        var v = parseFloat(document.getElementById("v").value) || 0;
+    // 2. Calculate Total Current
+    function current() {    
+        var r1 = parseFloat(document.getElementById("r5").value) || 0;
+        var r2 = parseFloat(document.getElementById("r6").value) || 0;
+        var r3 = parseFloat(document.getElementById("r7").value) || 0;
+        var voltage = parseFloat(document.getElementById("v").value) || 0;
         
-        var totalR = numA + numB + numC;
-        if(totalR !== 0) {
-            var dived = v / totalR;
-            document.getElementById("r").value = dived.toFixed(2);
+        var totalR = r1 + r2 + r3;
+        if(totalR > 0) {
+            var i = voltage / totalR;
+            document.getElementById("r").value = i.toFixed(2) + " A";
         } else {
-            document.getElementById("r").value = "Error";
+            alert("Resistance cannot be zero!");
         }
     }
 
-    // Voltage across each resistance (Assuming 3 equal resistors for your logic)
-    // Calculate Voltage Across R1 (V = I * R)
-    function voltage() {
-        var current = parseFloat(document.getElementById("r").value) || 0; // It (Total Current)
-        var r1 = parseFloat(document.getElementById("r5").value) || 0;    // R1
-        var v1 = current * r1;
-        document.getElementById("v1").value = v1.toFixed(2);
-    }
-    
-    function voltage1(){
-        var a = parseFloat(document.getElementById("V").value) || 0;
-        var v = a / 3;
-        document.getElementById("v2").value = v.toFixed(2);
-    }
-    
-    function voltage2(){
-        var a = parseFloat(document.getElementById("V").value) || 0;
-        var v = a / 3;
-        document.getElementById("v3").value = v.toFixed(2);
+    // 3. Calculate Voltage Drop (Physics Logic: V = I * R)
+    function calcVoltageDrop() {
+        // Pehle current calculate karna hoga
+        var r1 = parseFloat(document.getElementById("r5").value) || 0;
+        var r2 = parseFloat(document.getElementById("r6").value) || 0;
+        var r3 = parseFloat(document.getElementById("r7").value) || 0;
+        var vTotal = parseFloat(document.getElementById("v").value) || 0;
+        
+        var totalR = r1 + r2 + r3;
+        if(totalR > 0) {
+            var currentVal = vTotal / totalR;
+            
+            // Har resistor ka apna voltage drop
+            document.getElementById("v1").value = (currentVal * r1).toFixed(2) + "V";
+            document.getElementById("v2").value = (currentVal * r2).toFixed(2) + "V";
+            document.getElementById("v3").value = (currentVal * r3).toFixed(2) + "V";
+        } else {
+            alert("Please fill the Current section values first!");
+        }
     }
 </script>
 </body>
-
 </html>
-
