@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Series Circuit Simulator</title>
-    <link rel="stylesheet" href="series.css">
+    <link rel="stylesheet" href="styles/series.css">
 </head>
 <body>
     
@@ -17,7 +17,7 @@
     </p>
 
     <div class="container">
-        <img id="myimg" src="off bulb.png" alt="Bulb Status">
+        <img id="myimg" src="images/off_bulb.png" alt="Bulb Status">
         <div class="button">
             <button onclick="off()">OFF</button>
             <button onclick="on()">ON</button>
@@ -25,7 +25,7 @@
         <br><br>
 
         <h3>Total Resistance</h3>
-        <img src="series.png" alt="Series Diagram">
+        <img src="images/series.png" alt="Series Diagram">
         <div class="r1"><input type="text" placeholder="Total Rt" id="R" onclick="calculate()"></div>
         <div class="r2"><input type="text" placeholder="R1" id="r1"></div>
         <div class="r3"><input type="text" placeholder="R2" id="r3"></div>
@@ -33,7 +33,7 @@
     </div>
 
     <h3>Total Current</h3>
-    <img src="series.png" alt="Series Diagram">
+    <img src="images/series.png" alt="Series Diagram">
     <div class="r1"><input type="text" placeholder="Total It" id="r" onclick="current()"></div>
     <div class="r2"><input type="text" placeholder="R1" id="r5"></div>
     <div class="r3"><input type="text" placeholder="R2" id="r6"></div>
@@ -42,7 +42,7 @@
     <br>
 
     <h3>Voltage Across Each Resistance</h3>
-    <img src="voltage.png" alt="Voltage Diagram">
+    <img src="images/voltage.png" alt="Voltage Diagram">
     <div class="R1"><input type="text" placeholder="V1" id="v1" onclick="voltage()"></div>
     <div class="R2"><input type="text" placeholder="V2" id="v2" onclick="voltage1()"></div>
     <div class="R3"><input type="text" placeholder="V3" id ="v3" onclick="voltage2()"></div>
@@ -51,11 +51,11 @@
 
 <script>
     function off(){
-        document.getElementById('myimg').src='off bulb.png';
+        document.getElementById('myimg').src='images/off_bulb.png';
     }
     
     function on(){
-        document.getElementById('myimg').src='on bulb.png';
+        document.getElementById('myimg').src='images/on_bulb.png';
     }
 
     // Calculate Total Resistance
@@ -103,4 +103,5 @@
     }
 </script>
 </body>
+
 </html>
