@@ -43,14 +43,32 @@ series-circuit-simulator/
 
 <hr>
 
+<h2>💻 How to Run Locally</h2>
+<p>To run this project on your local machine, follow these steps:</p>
+<ol>
+  <li><strong>Clone the Repository:</strong>
+    <pre>git clone https://github.com/mhusnain-tech/series-circuit-simulator.git</pre>
+  </li>
+  <li><strong>Navigate to the Project Folder:</strong>
+    <pre>cd series-circuit-simulator</pre>
+  </li>
+  <li><strong>Launch the Simulator:</strong>
+    <p>Open <code>index.html</code> in any modern web browser (Chrome, Firefox, Edge, etc.).</p>
+  </li>
+</ol>
+
+<hr>
+
 <h2>⚙️ Physics Formulas Integrated</h2>
 <p>The simulator performs calculations based on standard electrical engineering principles:</p>
-
-
 
 <div align="center">
   <img src="images/ohm_law.jpg" alt="Ohm's Law Triangle" width="500">
 </div>
+
+
+
+[Image of Ohm's Law triangle]
 
 
 <ul>
@@ -72,4 +90,3 @@ series-circuit-simulator/
   <br>
   <p><i>Developed for educational excellence and to demonstrate modern frontend engineering capabilities.</i></p>
 </div>
-
