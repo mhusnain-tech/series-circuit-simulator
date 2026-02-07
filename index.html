@@ -84,10 +84,12 @@
     }
 
     // Voltage across each resistance (Assuming 3 equal resistors for your logic)
-    function voltage(){
-        var a = parseFloat(document.getElementById("V").value) || 0;
-        var v = a / 3;
-        document.getElementById("v1").value = v.toFixed(2);
+    // Calculate Voltage Across R1 (V = I * R)
+    function voltage() {
+        var current = parseFloat(document.getElementById("r").value) || 0; // It (Total Current)
+        var r1 = parseFloat(document.getElementById("r5").value) || 0;    // R1
+        var v1 = current * r1;
+        document.getElementById("v1").value = v1.toFixed(2);
     }
     
     function voltage1(){
@@ -105,3 +107,4 @@
 </body>
 
 </html>
+
