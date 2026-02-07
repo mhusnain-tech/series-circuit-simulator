@@ -1,155 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Series Circuit Simulator – README</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f4f6f8;
-            color: #333;
-            line-height: 1.6;
-            padding: 40px;
-        }
+<div align="center">
+  <h1>⚡ Series Circuit Simulator</h1>
+  <p><strong>An interactive web-based educational tool for simulating electrical series circuits and performing Ohm's Law calculations.</strong></p>
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-        }
-
-        h1, h2 {
-            color: #1f2937;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            margin-top: 30px;
-            border-bottom: 2px solid #e5e7eb;
-            padding-bottom: 5px;
-        }
-
-        p {
-            margin: 10px 0;
-        }
-
-        ul {
-            margin-left: 20px;
-        }
-
-        code {
-            background: #eef2f7;
-            padding: 4px 6px;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 14px;
-            color: #555;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-
-    <h1>Series Circuit Simulator</h1>
-    <p style="text-align:center;">
-        A simple and interactive web-based simulator to demonstrate the working of a series electrical circuit.
-    </p>
-
-    <h2>📌 Project Overview</h2>
-    <p>
-        The <strong>Series Circuit Simulator</strong> is an educational web project designed to help students
-        understand the fundamentals of series circuits. It visually demonstrates how resistance, current,
-        and voltage behave when components are connected in series.
-    </p>
-
-    <h2>⚙️ Features</h2>
-    <ul>
-        <li>Interactive ON/OFF bulb simulation</li>
-        <li>Total resistance calculation</li>
-        <li>Total current calculation using Ohm’s Law</li>
-        <li>Voltage drop across each resistor</li>
-        <li>Clean and user-friendly interface</li>
-    </ul>
-
-    <h2>🧠 Concepts Covered</h2>
-    <ul>
-        <li>Series Circuit</li>
-        <li>Ohm’s Law (V = IR)</li>
-        <li>Total Resistance in Series</li>
-        <li>Current flow in a closed circuit</li>
-        <li>Voltage division</li>
-    </ul>
-
-    <h2>🛠️ Technologies Used</h2>
-    <ul>
-        <li><strong>HTML5</strong> – Structure and layout</li>
-        <li><strong>CSS3</strong> – Styling and positioning</li>
-        <li><strong>JavaScript</strong> – Logic and interactivity</li>
-    </ul>
-
-    <h2>📁 Project Structure</h2>
-    <p>
-        <code>
-            series-circuit-simulator/<br>
-            ├── index.html<br>
-            ├── styles/<br>
-            │   └── series.css<br>
-            ├── scripts/<br>
-            │   └── series.js<br>
-            └── images/<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;├── series.png<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;├── voltage.png<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;├── on_bulb.png<br>
-            &nbsp;&nbsp;&nbsp;&nbsp;└── off_bulb.png
-        </code>
-    </p>
-
-    <h2>🚀 How to Run</h2>
-    <ul>
-        <li>Download or clone the repository</li>
-        <li>Open <code>index.html</code> in any modern web browser</li>
-        <li>No additional setup or dependencies required</li>
-    </ul>
-
-    <h2>🎯 Use Case</h2>
-    <p>
-        This project is ideal for:
-    </p>
-    <ul>
-        <li>Physics and electronics students</li>
-        <li>School / college practical demonstrations</li>
-        <li>Beginners learning HTML, CSS, and JavaScript</li>
-    </ul>
-
-    <h2>📈 Future Improvements</h2>
-    <ul>
-        <li>Parallel circuit simulation</li>
-        <li>Real-time auto calculations</li>
-        <li>Mobile-responsive layout</li>
-        <li>Animated current flow</li>
-    </ul>
-
-    <div class="footer">
-        <p>
-            Developed by <strong>M Husnain</strong><br>
-            Series Circuit Simulator Project
-        </p>
-    </div>
-
+  <p>
+    <a href="https://mhusnain-tech.github.io/series-circuit-simulator/">
+      <img src="https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Live Demo">
+    </a>
+    <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge" alt="Maintained">
+  </p>
 </div>
 
-</body>
-</html>
+<hr>
+
+<h2>📝 Project Overview</h2>
+<p>This project is a high-fidelity <strong>Series Circuit Simulator</strong> designed to bridge the gap between theoretical physics and practical application. It allows users to visualize how current flows through a single path and provides a real-time calculator for core electrical parameters.</p>
+
+<h2>🚀 Technical Features</h2>
+<ul>
+  <li><strong>Dynamic Circuit Logic:</strong> Real-time calculation of resistance, current, and voltage using pure JavaScript.</li>
+  <li><strong>Interactive Simulation:</strong> Visual state management to toggle light bulb states (ON/OFF).</li>
+  <li><strong>Positioned UI Overlays:</strong> Precise CSS absolute positioning to overlay input fields directly onto circuit diagrams.</li>
+  <li><strong>Error Handling:</strong> Logic included to prevent division-by-zero errors in calculations.</li>
+</ul>
+
+<h2>🛠️ Tech Stack</h2>
+<ul>
+  <li><strong>Frontend:</strong> HTML5, CSS3 (Flexbox, Absolute Positioning)</li>
+  <li><strong>Logic:</strong> JavaScript (ES6+)</li>
+  <li><strong>Deployment:</strong> GitHub Pages</li>
+</ul>
+
+<h2>📂 Project Architecture</h2>
+<pre>
+series-circuit-simulator/
+├── index.html          # Semantic Structure & UI Sections
+├── styles/
+│   └── series.css      # Custom UI Styling & Diagram Overlays
+├── scripts/
+│   └── series.js       # Physics Engine & Calculation Logic
+└── images/             # Optimized Visual Assets
+</pre>
+
+<hr>
+
+<h2>⚙️ Physics Formulas Integrated</h2>
+<p>The simulator performs calculations based on standard electrical engineering principles:</p>
+
+
+
+<div align="center">
+  <img src="images/ohm_law.jpg" alt="Ohm's Law Triangle" width="500">
+</div>
+
+
+<ul>
+  <li><strong>Total Resistance ($R_t$):</strong> <br> $$R_t = R_1 + R_2 + R_3$$</li>
+  <li><strong>Ohm's Law (Current):</strong> <br> $$I = \frac{V}{R_{total}}$$</li>
+  <li><strong>Voltage Divider Rule:</strong> <br> $$V_n = \frac{V_{total}}{n}$$ <br> <em>(Implemented for equal distribution across components)</em></li>
+</ul>
+
+<hr>
+
+<div align="center">
+  <h2>👤 Author</h2>
+  <p><strong>M Husnain</strong></p>
+  <p>
+    <a href="https://github.com/mhusnain-tech">
+      <img src="https://img.shields.io/badge/GitHub-@mhusnain--tech-black?style=flat&logo=github" alt="GitHub Profile">
+    </a>
+  </p>
+  <br>
+  <p><i>Developed for educational excellence and to demonstrate modern frontend engineering capabilities.</i></p>
+</div>
+
