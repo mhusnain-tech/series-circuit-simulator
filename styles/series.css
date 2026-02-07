@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: cadetblue;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Headings */
+h1 {
+    margin-bottom: 10px;
+    color: #161617;
+}
+
+h3 {
+    margin: 15px 0;
+}
+
+/* Description */
+.description {
+    max-width: 550px;
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Bulb Section */
+.bulb-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.bulb-section img {
+    width: 400px;
+    height: auto;
+}
+
+.button-group button {
+    padding: 8px 18px;
+    margin: 5px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-group button:hover {
+    background: #555;
+}
+
+/* Circuit Section */
+.circuit {
+    background: #ffffffdd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    width: 420px;
+    text-align: center;
+}
+
+.diagram {
+    position: relative;
+    width: 400px;
+    margin: auto;
+}
+
+.diagram img {
+    width: 100%;
+}
+
+/* Inputs */
+.diagram input {
+    position: absolute;
+    width: 55px;
+    padding: 4px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 4px;
+    border: 1px solid #333;
+}
+
+/* Positions */
+#Rt, #It { top: -30px; left: 20px; background: #ffffcc; }
+#R1, #CR1, #V1 { top: 60px; left: 140px; }
+#R2, #CR2, #V2 { top: 60px; left: 220px; }
+#R3, #CR3, #V3 { top: 60px; left: 300px; }
+#Vt, #Vtotal { top: 120px; left: 180px; }
+
+/* Buttons */
+.circuit button {
+    margin-top: 15px;
+    padding: 8px 20px;
+    border: none;
+    background: #222;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.circuit button:hover {
+    background: #444;
+}

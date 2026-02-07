@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Series Circuit Simulator</title>
+    <link rel="stylesheet" href="styles/series.css">
+</head>
+<body>
+
+    <h1>Series Circuit Simulator</h1>
+
+    <p class="description">
+        A series circuit is a simple circuit in which components are connected
+        end-to-end in a single path. The same current flows through every
+        component. If any part of the circuit breaks, the entire circuit stops working.
+    </p>
+
+    <!-- Bulb Section -->
+    <div class="bulb-section">
+        <img id="bulb" src="images/off_bulb.png" alt="Bulb">
+        <div class="button-group">
+            <button onclick="turnOff()">OFF</button>
+            <button onclick="turnOn()">ON</button>
+        </div>
+    </div>
+
+    <!-- Total Resistance -->
+    <section class="circuit">
+        <h3>Total Resistance</h3>
+        <div class="diagram">
+            <img src="images/series.png" alt="Series Circuit">
+            <input id="Rt" placeholder="Rt" readonly>
+            <input id="R1" placeholder="R1">
+            <input id="R2" placeholder="R2">
+            <input id="R3" placeholder="R3">
+        </div>
+        <button onclick="calculateResistance()">Calculate Rt</button>
+    </section>
+
+    <!-- Total Current -->
+    <section class="circuit">
+        <h3>Total Current</h3>
+        <div class="diagram">
+            <img src="images/series.png" alt="Series Circuit">
+            <input id="It" placeholder="It" readonly>
+            <input id="CR1" placeholder="R1">
+            <input id="CR2" placeholder="R2">
+            <input id="CR3" placeholder="R3">
+            <input id="Vt" placeholder="Voltage (V)">
+        </div>
+        <button onclick="calculateCurrent()">Calculate Current</button>
+    </section>
+
+    <!-- Voltage Drop -->
+    <section class="circuit">
+        <h3>Voltage Across Each Resistor</h3>
+        <div class="diagram">
+            <img src="images/voltage.png" alt="Voltage Drop">
+            <input id="V1" placeholder="V1" readonly>
+            <input id="V2" placeholder="V2" readonly>
+            <input id="V3" placeholder="V3" readonly>
+            <input id="Vtotal" placeholder="Total V">
+        </div>
+        <button onclick="calculateVoltage()">Calculate Voltage</button>
+    </section>
+
+    <script src="scripts/series.js"></script>
+</body>
+</html>
