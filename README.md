@@ -49,7 +49,7 @@ series-circuit-simulator/
 
 
 <div align="center">
-  <img src="./images/ohm_law.jpg" alt="Ohm's Law Triangle" width="500">
+  <img src="images/ohm_law.jpg" alt="Ohm's Law Triangle" width="500">
 </div>
 
 
